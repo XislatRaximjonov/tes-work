@@ -1,4 +1,4 @@
-import { Users } from "../Models/userMOdel.js"
+import { Users } from "../Models/userModel.js"
 import jwt from "jsonwebtoken";
 
 const signToken = (id) => {
