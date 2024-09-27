@@ -30,7 +30,7 @@ export const createProduct = async (req, res) => {
     const products = await Products.create(req.body);
 
     if (req.file) {
-      products.file = req.file;
+      products.image = req.file;
     }
     res.status(201).json({
       status: "success",
