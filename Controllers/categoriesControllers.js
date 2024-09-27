@@ -20,6 +20,12 @@ export const getAllCategories = async (req, res) => {
 export const createCategory = async (req, res) => {
     try {
         const categories = await Categories.create(req.body);
+
+        if (req.file) {
+          categories.file = req.file;
+        }
+
+
         res.status(201).json({
             status: "success",
             results: categories.length,
@@ -42,6 +48,12 @@ export const updateCategory = async (req, res) => {
         runValidators: true,
         new: true,
       });
+
+      if (req.file) {
+        categories.file = req.file;
+      }
+
+      
       res.status(200).json({
         status: "success",
         data: categories,
