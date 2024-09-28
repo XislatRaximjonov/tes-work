@@ -21,10 +21,12 @@ export const getAllComments =  async( req, res) =>{
 }
 export const createComment = async( req, res) => {
      try {
+         console.log(req.body);
         const newComment = await Comments.create(req.body);
+        
         res.status(201).json({
             status: "success",
-            results: comments.length,
+            results: newComment.length,
             data: newComment,
         });
 
