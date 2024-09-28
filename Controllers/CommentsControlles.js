@@ -41,7 +41,7 @@ export const createComment = async( req, res) => {
 }
 export const updateComment = async( req, res) => {
      try {
-        const comment = await Comments.findByIdUpdate(req.params.id , req.body,{
+        const comment = await Comments.findByIdAndUpdate(req.params.id , req.body,{
             runValidators :true,
             new: true,
         });
